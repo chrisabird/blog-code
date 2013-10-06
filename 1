@@ -1,0 +1,22 @@
+(ns blog-code.sorting-colors-test
+  (:use midje.sweet blog-code.sorting-colors))
+
+(def red-colors [{:rgb {:r 170 :g 63  :b 85 } :hex "AA3F55" :cielab {:b 10.237176  :a 45.709176  :l 42.403418}}
+                 {:rgb {:r 219 :g 144 :b 153} :hex "DB9099" :cielab {:b 6.301008  :a 29.989378  :l 67.467419}} 
+                 {:rgb {:r 241 :g 167 :b 162} :hex "F1A7A2" :cielab {:b 12.878734  :a 27.208515  :l 75.409492}} 
+                 {:rgb {:r 243 :g 209 :b 201} :hex "F3D1C9" :cielab {:b 7.402528  :a 11.011979  :l 86.365358}} 
+                 {:rgb {:r 239 :g 217 :b 208} :hex "EFD9D0" :cielab {:b 6.14829  :a 6.803851  :l 88.235375}} 
+                 {:rgb {:r 241 :g 229 :b 220} :hex "F1E5DC" :cielab {:b 4.952257  :a 2.911865  :l 91.759237}} 
+                 {:rgb {:r 132 :g 35  :b 40 } :hex "842328" :cielab {:b 21.147956  :a 41.619145  :l 30.120421}} 
+                 {:rgb {:r 183 :g 119 :b 116} :hex "B77774" :cielab {:b 11.574657  :a 25.096364  :l 56.60262}} 
+                 {:rgb {:r 210 :g 154 :b 152} :hex "D29A98" :cielab {:b 8.332442  :a 21.283814  :l 68.747142}} 
+                 {:rgb {:r 226 :g 195 :b 191} :hex "E2C3BF" :cielab {:b 5.42103  :a 10.76443  :l 81.275439}} 
+                 {:rgb {:r 238 :g 222 :b 215} :hex "EEDED7" :cielab {:b 4.358549  :a 4.837221  :l 89.610957}} 
+                 {:rgb {:r 113 :g 42  :b 41 } :hex "712A29" :cielab {:b 16.798323  :a 31.312469  :l 27.612414}} 
+                 {:rgb {:r 175 :g 81  :b 66 } :hex "AF5142" :cielab {:b 26.435536  :a 37.486212  :l 46.139487}} 
+                 {:rgb {:r 215 :g 147 :b 128} :hex "D79380" :cielab {:b 19.57072  :a 23.700833  :l 67.122464}} 
+                 {:rgb {:r 172 :g 86  :b 142} :hex "AC568E" :cielab {:b -15.378832  :a 42.738613  :l 48.722962}} 
+                 {:rgb {:r 231 :g 217 :b 227} :hex "E7D9E3" :cielab {:b -4.214256  :a 7.005148  :l 87.975361}}])
+
+(fact "can sort colors by rgb"
+  (first (sort-by-rgb red-colors)) => "") 
